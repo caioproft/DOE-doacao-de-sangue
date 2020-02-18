@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Donor from './app/model/Donor';
+import DonorController from './app/controller/DonorController';
 
 const routes = new Router();
 
@@ -7,8 +7,7 @@ routes.get('/', function (req, res) {
   return res.render("index.html")
 });
 
-routes.get('/donors', function (req, res) {
-  return res.json({ msg: 'oi' })
-});
+routes.post('/', DonorController.store)
+
 
 export default routes;
