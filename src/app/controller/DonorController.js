@@ -10,7 +10,7 @@ class DonorController {
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'É preciso informar todos os campos do formulário.' })
+      return res.status(400).send({ message: 'É preciso informar todos os campos do formulário.' })
     }
 
     await Donor.create(req.body);
