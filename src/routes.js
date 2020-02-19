@@ -3,11 +3,9 @@ import DonorController from './app/controller/DonorController';
 
 const routes = new Router();
 
-routes.get('/', function (req, res) {
-  return res.render("index.html")
-});
+routes.get('/', DonorController.index);
 
-routes.post('/', DonorController.store)
+routes.post('/', DonorController.store);
 
 
 export default routes;

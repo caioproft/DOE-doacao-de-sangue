@@ -16,6 +16,13 @@ class DonorController {
     await Donor.create(req.body);
     return res.redirect("/");
   }
+
+  async index(req, res) {
+
+    const donors = await Donor.findAll();
+
+    return res.render("index.html", { donors });
+  }
 }
 
 export default new DonorController();
