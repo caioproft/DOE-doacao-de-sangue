@@ -13,12 +13,8 @@ class DonorController {
       return res.status(400).json({ error: 'É preciso informar todos os campos do formulário.' })
     }
 
-    const name = req.body.name
-    const email = req.body.email
-    const blood = req.body.blood
-
-    const donor = await Donor.create(req.body);
-    return res.json(donor);
+    await Donor.create(req.body);
+    return res.redirect("/");
   }
 }
 
